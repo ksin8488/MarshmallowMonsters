@@ -28,14 +28,17 @@ public class MarshmallowMonster
 	}
 		
 	public String toString()
-	{	//example of how to use all the data members in the description of the monster
+	{	
+		String description = "I am a horifying monster to behold named " + name + " with " + eyeCount + " eyes to stare into your soul.";
+		description += " My " + tentacleAmount + " tentacle's will snatch you up if you get too close and my " + armCount + " arms will";
+		description += " let me skitter closer and closer! And i will hunt you down with my " + hasBloop + " bloop. Hey! i'm a lot more intimidating than this sounds! ";
+		
+//		example of how to use all the data members in the description of the monster
 //		String description = "I am a monster, my name is " + name + ", I have " + eyeCount + " eyes and only" ;	//command / comments and uncomment code
 //		description += tentacleAmount + " tentacles but I have " + armCount + " arms! " + hasBloop + " tells you"; //description += says continue onto the string and keep adding
 //		description += " if I have a bloop";
 			
-		String description = "I am a horifying monster to behold named " + name + " with " + eyeCount + " eyes to stare into your soul.";
-		description += " My " + tentacleAmount + " tentacle's will snatch you up if you get too close and my " + armCount + " arms will";
-		description += " let me skitter closer and closer! And i will hunt you down with my " + hasBloop + " bloop. Hey! i'm a lot more intimidating than this sounds! ";
+		
 		
 		return description;
 	}
