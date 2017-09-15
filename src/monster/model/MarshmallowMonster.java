@@ -17,7 +17,7 @@ public class MarshmallowMonster
 	}
 	
 	//initializes everything to 0, false, or null. 
-	public MarshmallowMonster(String name, int eyeCount, int arms, int tentacleCount, boolean hasBloop)	//names don't have to have a match. But it's a good idea to put them in order
+	public MarshmallowMonster(String name, int eyeCount, int arms, double tentacleCount, boolean hasBloop)	//names don't have to have a match. But it's a good idea to put them in order
 	{
 		this.name = name;	//Assigns to the class data member this.name the value of "name" (right to left/one way road)
 		this.eyeCount = eyeCount;
@@ -35,7 +35,7 @@ public class MarshmallowMonster
 			
 		String description = "I am a horifying monster to behold named " + name + " with " + eyeCount + " eyes to stare into your soul.";
 		description += " My " + tentacleAmount + " tentacle's will snatch you up if you get too close and my " + armCount + " arms will";
-		description += " let me skitter closer and closer! And i will hunt you down with my " + hasBloop + " bloop. Hey! it's a lot more intimidating than it sounds! ";
+		description += " let me skitter closer and closer! And i will hunt you down with my " + hasBloop + " bloop. Hey! i'm a lot more intimidating than this sounds! ";
 		
 		return description;
 	}
