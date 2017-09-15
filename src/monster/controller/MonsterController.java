@@ -8,7 +8,11 @@ public class MonsterController
 	{
 //		MarshmallowMonster basic = new MarshmallowMonster();
 //		System.out.println(basic);
-		MarshmallowMonster kothan = new MarshmallowMonster("Kothan ", 7, 3, 6.7, true);
-				System.out.println(kothan);
+		MarshmallowMonster kothan = new MarshmallowMonster("Kothan ", 8, 6, 2, false);
+		System.out.println(kothan);
+		System.out.println("I am feeling hungery, I am going to eat one of Kothan's arms" );
+		kothan.setArmCount(kothan.getArmCount() - 1);
+		System.out.println(kothan);
+				
 	}
 }

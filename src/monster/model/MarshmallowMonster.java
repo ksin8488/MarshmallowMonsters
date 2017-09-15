@@ -26,9 +26,61 @@ public class MarshmallowMonster
 		this.hasBloop = hasBloop;
 			
 	}
+	
+	//getter's to get the data members
+	public String getName()
+	{
+		return name;
+	}
 		
+	public int getEyeCount()
+	{
+		return eyeCount;
+	}
+	
+	public int getArmCount()
+	{
+		return armCount;
+	}
+	
+	public double getTentacleAmount()
+	{
+		return tentacleAmount;
+	}
+	
+	public boolean hasBloop()
+	{
+		return hasBloop;
+	}
+	
+	//Setters to set the data members
+	public void setName(String name)
+	{
+		this.name = name;
+	}
+
+	public void setEyeCount(int eyeCount)
+	{
+		this.eyeCount = eyeCount;
+	}
+	
+	public void setArmCount(int armCount)
+	{
+		this.armCount = armCount;
+	}
+	
+	public void setTentcleAmount(double tentacleAmount)
+	{
+		this.tentacleAmount = tentacleAmount;
+	}
+	
+	public void setBloop(boolean hasBloop)
+	{
+		this.hasBloop = hasBloop;
+	}
+	
 	public String toString()
-	{	
+	{
 		String description = "I am a horifying monster to behold named " + name + " with " + eyeCount + " eyes to stare into your soul.";
 		description += " My " + tentacleAmount + " tentacle's will snatch you up if you get too close and my " + armCount + " arms will";
 		description += " let me skitter closer and closer! And i will hunt you down with my " + hasBloop + " bloop. Hey! i'm a lot more intimidating than this sounds! ";
