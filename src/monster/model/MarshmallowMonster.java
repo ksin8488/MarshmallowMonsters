@@ -95,7 +95,8 @@ public class MarshmallowMonster
 	
 	public String toString2()
 	{
-		String backstory = "kothan's backstroy. ";
+		String backstory = "A long time ago in the sugar mines of the chocolate beard men, there was a great monster that lurked in the tunnels. His name was Kothan the great. \\n";
+		
 		
 		return backstory;
 	}
