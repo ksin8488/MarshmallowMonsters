@@ -41,13 +41,65 @@ public class MonsterController
 		}
 		else if(armEat - currentMonster.getArmCount() > 0)
 		{
-			System.out.println("You are not allowed to eat more arms than exist on me :( ");
+			System.out.println("You are not allowed to eat more arms than exist on him :( ");
 		}
 		else 
 		{
 			currentMonster.setArmCount(currentMonster.getArmCount() - armEat);
 			System.out.println("OK, now I have " + currentMonster.getArmCount());
 		}
+		
+		//Uses many if/else if/else statements to make sure that 
+		System.out.println("what color would you like to paint the whtie monster? 1 for red, 2 Green, 3 for Blue, 4 White, 5 Black ");
+		int userColor = myScanner.nextInt();
+		
+		if(userColor == 1 )
+		{
+			System.out.println("You throw red sugary color on it. It looks bright red! But then the body absorbs the sugar... ");
+		}
+		else if(userColor == 2 )
+		{
+			System.out.println("You throw green sugary color on it. It looks bright green! But then the body absorbs the sugar... ");
+		}
+		else if(userColor == 3 )
+		{
+			System.out.println("You throw blue sugary color on it. It looks bright blue! But then the body absorbs the sugar... ");
+		}
+		else if(userColor == 4 )
+		{
+			System.out.println("You throw white sugary color on it. It's already white but it seems to appreciate it... before eating it. ");
+		}
+		else if(userColor == 5 )
+		{
+			System.out.println("You throw black sugary color on it. It rises and puffs up trying to look scary. But he just looks sweet as the sugar is absorbed into him... ");
+		}
+		//more else if/else statements to prevent errors
+		else if(userColor != 1)
+		{
+			System.out.println("You did not choose a color number");
+		}
+		else if(userColor != 2)
+		{
+			System.out.println("You did not choose a color number");
+		}
+		
+		else if(userColor != 3)
+		{
+			System.out.println("You did not choose a color number");
+		}
+		else if(userColor != 4)
+		{
+			System.out.println("You did not choose a color number");
+		}
+		else if(userColor != 5)
+		{
+			System.out.println("You did not choose a color number");
+		}
+		else
+		{
+			System.out.println("ERROR! Something has gone wrong with your selection. ");
+		}
+		
 		
 		myScanner.close(); //closes scanner to prevent memory leaks
 	}
