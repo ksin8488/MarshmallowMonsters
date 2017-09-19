@@ -2,9 +2,18 @@ package monster.controller;
 
 import monster.model.MarshmallowMonster;
 import java.util.Scanner;
+import monster.view.MonsterDisplay;
 
 public class MonsterController
 {
+	private MonsterDisplay popup;
+	
+	public MonsterController()
+	{
+		popup = new MonsterDisplay();		//MonsterDisplay() is owned by the MonsterCOntroller() construct
+	}
+	
+	
 	public void start()
 	{
 //		MarshmallowMonster basic = new MarshmallowMonster();
@@ -47,6 +56,18 @@ public class MonsterController
 		{
 			currentMonster.setArmCount(currentMonster.getArmCount() - armEat);
 			System.out.println("OK, now I have " + currentMonster.getArmCount());
+		}
+		
+		System.out.println("How many tentacles do you want to eat? I have " + currentMonster.getTentacleAmount());
+		double food = myScanner.nextDouble();
+		
+		if(food == currentMonster.getTentacleAmount()) 
+		{
+			System.out.println("You ate all of his tentacles!!!");
+		}
+		else
+		{
+			System.out.println("More likely");
 		}
 		
 		//Uses many if/else if/else statements to make sure that 
@@ -99,6 +120,10 @@ public class MonsterController
 		{
 			System.out.println("ERROR! Something has gone wrong with your selection. ");
 		}
+		
+		popup.displayText("Hi there! Ready to play???");
+		String answer = popup.getResponse("What is the air speed of a coconut laden swallow?");
+		System.out.println(answer);
 		
 		
 		myScanner.close(); //closes scanner to prevent memory leaks
