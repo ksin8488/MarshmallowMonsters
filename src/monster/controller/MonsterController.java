@@ -74,7 +74,7 @@ public class MonsterController
 			System.out.println("You throw black sugary color on it. It rises and puffs up trying to look scary. But he just looks sweet as the sugar is absorbed into him... ");
 		}
 		//more else if/else statements to prevent errors
-		else if(userColor != 1)
+		if(userColor != 1)
 		{
 			System.out.println("You did not choose a color number");
 		}
