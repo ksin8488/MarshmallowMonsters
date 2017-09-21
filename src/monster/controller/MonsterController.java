@@ -16,13 +16,17 @@ public class MonsterController
 	
 	public void start()
 	{
-//		MarshmallowMonster basic = new MarshmallowMonster();
+		MarshmallowMonster basic = new MarshmallowMonster();
 //		System.out.println(basic);
+		popup.displayText(basic.toString());		//calls the toString method we've been using from MarhmallowMonster
 		MarshmallowMonster kothan = new MarshmallowMonster("Kothan ", 8, 6, 2, false);
-		System.out.println(kothan);
-		System.out.println("I am feeling hungery, I am going to eat one of Kothan's arms" );
+//		System.out.println(kothan);
+		popup.displayText(kothan.toString());
+//		System.out.println("I am feeling hungry, I am going to eat one of Kothan's arms" );
+		popup.displayText("I am feeling hungery, I am going to eat one of Kothan's arms");
 		kothan.setArmCount(kothan.getArmCount() - 1);
-		System.out.println(kothan);
+//		System.out.println(kothan);
+		popup.displayText(kothan.toString());
 		
 		interactWithMonster(kothan);
 				
