@@ -36,7 +36,7 @@ public class MonsterController
 	{
 		Scanner myScanner= new Scanner(System.in);
 //		System.out.println(currentMonster.getName() + " wants to know how many eyes you want to eat. Please type in how many you want to eat. ");
-		int consumed;
+		int consumed = 0;
 		String response = popup.getResponse(currentMonster.getName() + " wants to know haw many eyes you want to eat. Please type in how many you want to eat. ");	//have to use getResponse rather than displayText to get user input
 		
 		if(isValidInteger(response))
@@ -47,7 +47,8 @@ public class MonsterController
 		
 //		int consumed = myScanner.nextInt();
 		currentMonster.setEyeCount(currentMonster.getEyeCount() - consumed);
-		System.out.println(currentMonster);
+//		System.out.println(currentMonster);
+		popup.displayText(currentMonster.toString());
 		
 		System.out.println("How many arms are you interested in eating? I have " + currentMonster.getArmCount());
 		//consumed = myScanner.nextInt();		can do it this way
@@ -55,32 +56,46 @@ public class MonsterController
 		
 		if(armEat == 0)			//== operator can only compare ints or booleans in Java
 		{
-			System.out.println("Not hungry? oh so sad...");
+//			System.out.println("Not hungry? oh so sad...");
+			popup.displayText("Not hungry? oh so sad...");
 		}
 		else if(armEat < 0)
 		{
-			System.out.println("Math/Reality is hard for you. It's impossible to eat a negative amount.");
+//			System.out.println("Math/Reality is hard for you. It's impossible to eat a negative amount.");
+			popup.displayText("Math/Reality is hard for you. It's impossible to eat a negative amount.");
 		}
 		else if(armEat - currentMonster.getArmCount() > 0)
 		{
-			System.out.println("You are not allowed to eat more arms than exist on him :( ");
+//			System.out.println("You are not allowed to eat more arms than exist on him :( ");
+			popup.displayText("You are not allowed to eat more arms than exist on him :( ");
 		}
 		else 
 		{
 			currentMonster.setArmCount(currentMonster.getArmCount() - armEat);
-			System.out.println("OK, now I have " + currentMonster.getArmCount());
+//			System.out.println("OK, now I have " + currentMonster.getArmCount());
+			popup.displayText("OK, now I have" + currentMonster.getArmCount() );
 		}
 		
-		System.out.println("How many tentacles do you want to eat? I have " + currentMonster.getTentacleAmount());
-		double food = myScanner.nextDouble();
+//		System.out.println("How many tentacles do you want to eat? I have " + currentMonster.getTentacleAmount());
+		popup.getResponse("How many tentacles do you want to eat? I have " + currentMonster.getTentacleAmount());
+		
+		
+		double food = 0.0;
+		String tentacleResponse = popup.getResponse("");
+		if(isValidDouble(tentacleResponse))
+		{
+			food = Double.parseDouble(tentacleResponse);
+		}
 		
 		if(food == currentMonster.getTentacleAmount()) 
 		{
-			System.out.println("You ate all of his tentacles!!!");
+//			System.out.println("You ate all of his tentacles!!!");
+			popup.displayText("You ate all of his tentacles!!!");
 		}
 		else
 		{
-			System.out.println("More likely");
+//			System.out.println("More likely");
+			popup.displayText("More likely");
 		}
 		
 		//Uses many if/else if/else statements to make sure that 
@@ -143,7 +158,7 @@ public class MonsterController
 	}
 	
 	//Helper methods
-	private boolean isValidInteger(String sample)		//checks to see if user's entry is a valid intiger
+	private boolean isValidInteger(String sample)		//checks to see if user's entry is a valid integer
 	{
 		boolean valid = false;
 		
@@ -155,6 +170,23 @@ public class MonsterController
 		catch(NumberFormatException error)
 		{
 			popup.displayText("You need to input an int " + sample + " is not valid.");
+		}
+		
+		return valid;
+	}
+	
+	private boolean isValidDouble(String sampleDouble)
+	{
+		boolean valid = false;
+		
+		try
+		{
+			Double.parseDouble(sampleDouble);
+			valid = true;
+		}
+		catch(NumberFormatException error) 
+		{
+			popup.displayText("You need to typ a double - " + sampleDouble + "is not a valid answer.");
 		}
 		
 		return valid;
