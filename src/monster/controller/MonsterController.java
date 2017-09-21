@@ -35,8 +35,17 @@ public class MonsterController
 	private void interactWithMonster(MarshmallowMonster currentMonster)
 	{
 		Scanner myScanner= new Scanner(System.in);
-		System.out.println(currentMonster.getName() + " wants to know how many eyes you want to eat. Please type in how many you want to eat. ");
-		int consumed = myScanner.nextInt();
+//		System.out.println(currentMonster.getName() + " wants to know how many eyes you want to eat. Please type in how many you want to eat. ");
+		int consumed;
+		String response = popup.getResponse(currentMonster.getName() + " wants to know haw many eyes you want to eat. Please type in how many you want to eat. ");	//have to use getResponse rather than displayText to get user input
+		
+		if(isValidInteger(response))
+		{
+			consumed = Integer.parseInt(response);
+		}
+		
+		
+//		int consumed = myScanner.nextInt();
 		currentMonster.setEyeCount(currentMonster.getEyeCount() - consumed);
 		System.out.println(currentMonster);
 		
@@ -126,10 +135,28 @@ public class MonsterController
 		}
 		
 		popup.displayText("Hi there! Ready to play???");
-		String answer = popup.getResponse("What is the air speed of a coconut laden swallow?");
-		System.out.println(answer);
+		String response2 = popup.getResponse("What is the air speed of a coconut laden swallow?");
+		System.out.println(response2);
 		
 		
 		myScanner.close(); //closes scanner to prevent memory leaks
+	}
+	
+	//Helper methods
+	private boolean isValidInteger(String sample)		//checks to see if user's entry is a valid intiger
+	{
+		boolean valid = false;
+		
+		try 
+		{
+			Integer.parseInt(sample);
+			valid = true;
+		}
+		catch(NumberFormatException error)
+		{
+			popup.displayText("You need to input an int " + sample + " is not valid.");
+		}
+		
+		return valid;
 	}
 }
