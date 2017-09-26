@@ -15,7 +15,22 @@ public class MonsterController
 	
 	
 	public void start()
-	{
+	{	//Demo of loops TAKE SCREENSHOT
+		
+//		int count = 0;
+//		while(count < 10)
+//		{
+//			popup.displayText("Isn't he the coolest??!");
+//			count +=2;
+//		}
+		
+		
+		
+		
+		
+		
+		
+		
 		MarshmallowMonster basic = new MarshmallowMonster();
 //		System.out.println(basic);
 		popup.displayText(basic.toString());		//calls the toString method we've been using from MarhmallowMonster
