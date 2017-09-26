@@ -31,12 +31,8 @@ public class MonsterController
 //		{
 //			popup.displayText("This is loop # " + (loop + 1) + " of ten");
 //		}	//after closing squiggle the int loop no longer is visible. Only within the brackets
-//		
 		
-		
-		
-		
-		
+			
 		
 		
 		MarshmallowMonster basic = new MarshmallowMonster();
@@ -62,10 +58,17 @@ public class MonsterController
 		int consumed = 0;
 		String response = popup.getResponse(currentMonster.getName() + " wants to know haw many eyes you want to eat. Please type in how many you want to eat. ");	//have to use getResponse rather than displayText to get user input
 		
-		if(isValidInteger(response))
+		while(!isValidInteger(response))		//creates a statement that only terminates once the correct answer is given
 		{
-			consumed = Integer.parseInt(response);
+			popup.displayText("grrr type in a better answer next time");
+			response = popup.getResponse("Type in a integer value!");
 		}
+		
+		
+//		if(isValidInteger(response))		No longer needed thanks to the while loop (worked like an if block with a loop)
+//		{
+//			consumed = Integer.parseInt(response);
+//		}
 		
 		
 //		int consumed = myScanner.nextInt();
