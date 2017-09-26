@@ -83,10 +83,17 @@ public class MonsterController
 //		int armEat = myScanner.nextInt();		//or use a new value if you want to record the value for another time else just reuse
 		int armEat = 0;
 		
-		if(isValidInteger(armResponse))
+		while(!isValidInteger(armResponse))
 		{
-			armEat = Integer.parseInt(armResponse);
+			popup.displayText("grrr type in good answer");
+			armResponse = popup.getResponse("Type in an integer!");
 		}
+		armEat = Integer.parseInt(armResponse);		//sets the armEat amount to the response given
+		
+//		if(isValidInteger(armResponse))
+//		{
+//			armEat = Integer.parseInt(armResponse);
+//		}
 		
 		if(armEat == 0)			//== operator can only compare ints or booleans in Java
 		{
@@ -115,10 +122,18 @@ public class MonsterController
 		
 		
 		double food = 0.0;
-		if(isValidDouble(tentacleResponse))
+		
+		while(!isValidDouble(tentacleResponse))
 		{
-			food = Double.parseDouble(tentacleResponse);
+			popup.displayText("grr type the correct response!");
+			tentacleResponse = popup.getResponse("Type in a valid Double!");
 		}
+		food = Double.parseDouble(tentacleResponse);
+		
+//		if(isValidDouble(tentacleResponse))
+//		{
+//			food = Double.parseDouble(tentacleResponse);
+//		}
 		
 		if(food == currentMonster.getTentacleAmount()) 
 		{
@@ -136,10 +151,17 @@ public class MonsterController
 		String colorResponse = popup.getResponse("What color would you like to paint the white monster? 1 for red, 2 Green, 3 for Blue, 4 White, 5 Black ");
 		int userColor = 0;
 		 
-		if(isValidInteger(colorResponse))
+		while(!isValidInteger(colorResponse))
 		{
-			userColor = Integer.parseInt(colorResponse);
+			popup.displayText("GRRR type the correct color number!");
+			colorResponse = popup.getResponse("Type in a valid integer value! 1 for red, 2 Green, 3 for Blue, 4 White, 5 Black");
 		}
+		userColor = Integer.parseInt(colorResponse);
+		
+//		if(isValidInteger(colorResponse))
+//		{
+//			userColor = Integer.parseInt(colorResponse);
+//		}
 		
 		if(userColor == 1 )
 		{
@@ -166,6 +188,8 @@ public class MonsterController
 //			System.out.println("You throw black sugary color on it. It rises and puffs up trying to look scary. But he just looks sweet as the sugar is absorbed into him... ");
 			popup.displayText("You throw black sugary color on it. It rises and puffs up trying to look scary. But he just looks sweet as the sugar is absorbed into him... ");
 		}
+		else
+			popup.displayText("You did not type the correct color value and Kothan can't be painted");
 		
 		//DON'T NEED DUE TO HELPER METHODS
 //		//more else if/else statements to prevent errors
@@ -206,15 +230,24 @@ public class MonsterController
 //		System.out.println(response2);
 		boolean correctAnswer = false;
 		
+		while(!isValidBoolean(questionResponse))
+		{
+			popup.displayText("Good sir/madam/other, please type in a valid response");
+			questionResponse = popup.getResponse("Type the correct guess for the air speed of a cocunut laden swallow that isn't cocunt laden?");
+		}
+		
 		if (questionResponse.equals("24"))
 		{
 			correctAnswer = true;
 		}
+		else
+			popup.displayText("Sorry! You got the wrong answer. it was 24");
 		
-		if(isValidBoolean(questionResponse))
-		{
-			popup.displayText("You got the answer! Congratz! Cheater.");
-		}
+//		if(isValidBoolean(questionResponse))
+//		{
+//			popup.displayText("You got the answer! Congratz! Cheater.");
+//		}
+	
 		
 		myScanner.close(); //closes scanner to prevent memory leaks
 	}
