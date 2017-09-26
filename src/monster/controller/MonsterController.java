@@ -18,12 +18,20 @@ public class MonsterController
 	{	//Demo of loops TAKE SCREENSHOT
 		
 //		int count = 0;
+		
+// 		WHILE loop
 //		while(count < 10)
 //		{
 //			popup.displayText("Isn't he the coolest??!");
 //			count +=2;
 //		}
-		
+
+//		FOR loop
+//		for(int loop = 0; loop < 10; loop += 1)		//execution amount = |start - end|/increment
+//		{
+//			popup.displayText("This is loop # " + (loop + 1) + " of ten");
+//		}	//after closing squiggle the int loop no longer is visible. Only within the brackets
+//		
 		
 		
 		
