@@ -3,14 +3,18 @@ package monster.controller;
 import monster.model.MarshmallowMonster;
 import java.util.Scanner;
 import monster.view.MonsterDisplay;
+import java.util.List;
+import java.util.ArrayList;
 
 public class MonsterController
 {
 	private MonsterDisplay popup;
+	private List<MarshmallowMonster> monsterList;
 	
 	public MonsterController()
 	{
 		popup = new MonsterDisplay();		//MonsterDisplay() is owned by the MonsterCOntroller() construct
+		monsterList = new ArrayList<MarshmallowMonster>();
 	}
 	
 	
@@ -47,8 +51,29 @@ public class MonsterController
 //		System.out.println(kothan);
 		popup.displayText(kothan.toString());
 		
+		monsterList.add(basic);
+		monsterList.add(kothan);
+		useList();
+		
 		interactWithMonster(kothan);
 				
+	}
+	
+	private void useList()
+	{
+		for (int index = 0; index < monsterList.size(); index++)
+		{
+			MarshmallowMonster currentMonster = monsterList.get(index);
+			popup.displayText(currentMonster.getName());
+			String updateName = popup.getResponse("What should my new name be?");
+			currentMonster.setName(updateName);
+			popup.displayText("My new name is " + currentMonster.getName());
+		}
+		
+		for (MarshmallowMonster current : monsterList)	//does the same work as the for loop above starts doing
+		{
+			popup.displayText("My name is " + current.getName());
+		}
 	}
 	
 	private void interactWithMonster(MarshmallowMonster currentMonster)
